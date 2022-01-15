@@ -13,7 +13,7 @@ W zależności od napięcia na termistorze zmieniana jest jasność świecenia d
 # Lista elementów projektu:
 
 ## Mikrokontroler
-![img](zdjęcia/Mikrokontroler.png)
+![img](zdjęcia/Mikrokontroler.PNG)
 
 
 ### 1.  Mikroprocesor - ATMEL ATmega328P
@@ -56,12 +56,12 @@ Napicie pracy: 1.8...5.5V
 
 ### 3.  Termistor
 Termistory NTC ze względny na “ładny”, gładki przebieg charakterystyki rezystancji w funkcji temperatury, są często stosowane w roli elementów pomiarowych. Układ elektroniczny mierzy rezystancję i na podstawie odpowiednich tabel lub wzorów przelicza uzyskaną wartość na temperaturę. Ich rezystancja może zmieniać się w naprawdę szerokim zakresie.
-![img](zdjęcia/Termistor.png)
+![img](zdjęcia/Termistor.PNG)
 
 ## Elementy wyjścia
 
 
 ### 4.  Dioda LED RGB
-![img](zdjęcia/LED.png)
+![img](zdjęcia/LED.PNG)
 
 # Kod
