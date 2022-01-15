@@ -1,29 +1,67 @@
-# Projekt TM
+# Projekt - Zmiana natężenia światła emitowanego przez diodę w zależności od temperatury otoczenia. 
+# Opis projektu:
+W zależności od napięcia na termistorze zmieniana jest jasność świecenia diody LED. Czym wyższa temperatura, tym jaśniej świecić będzie dioda. 
 
 
 
-## Etap 1
-
-- Temat projektu: Zmiana koloru diody/mocy świecenia w zależności od temperatury. 
-
-- Opis: Projekt zakłada wykorzystanie czujnika temperatury, który zostanie podłączony do mikrokontrolera. W zależności od zmierzonej temperatury zmieniać będzie się natężenie światła lub jego kolor. 
-
-- Wstępna (przykładowa) lista elementów:
-
-[Czujnik temperatury](https://botland.com.pl/termistory/4949-termistor-ntc-110-10k-5-10szt.html)
-
-Czujnikiem temperatury będzie termistor typu NTC o rezystancji 10kOm oraz tolerancji 5%. Za pomocą odczytywanie wartości rezystancji, która zmienia się wraz ze zmianą temperatury, możemy ją odczytać.
 
 
+# Urzadzenia:
+- **Wyjścia:** Dioda LED
+- **Wejścia:** Termistor
 
-[Mikrokontroler](https://botland.com.pl/arduino-seria-podstawowa-oryginalne-plytki/1060-arduino-uno-rev3-a000066-8058333490090.html)
+# Lista elementów projektu:
 
-Projekt wykonany będzie na Arduino Uno w 3 rewizji. Jego sercem jest AVR ATMmega328, posiada ona 32kB pamięci Flash oraz 2kB pamięci RAM, 14 cyfrowych wejść/wyjść, a 6 z nich można wykorzystać jako kanały PWM oraz 6 wejść analogowych. Wymiary płytki to 68,8 x 53,4 mm. 
+## Mikrokontroler
+![img](zdjęcia/Mikrokontroler.png)
 
-[Przewody połączeniowe](https://botland.com.pl/przewody-polaczeniowe/9732-przewody-polaczeniowe-mesko-meskie-10cm-40szt.html)
 
-Są to przewody połączeniowe męsko-męskie o długości 10 szt. 
+### 1.  Mikroprocesor - ATMEL ATmega328P
 
-[Płytka stykowa](https://botland.com.pl/plytki-stykowe/56-plytka-stykowa-400-otworow.html)
 
-Jest to płytka stykowa posiadająca 400 otworów. Pozwala ona tworzyć oraz testować układy bez potrzeby ich lutowania. Jej wymiary to 82,5 x 53 mm. Na bokach posiada zaznaczone czerwone oraz niebieskie paski oznaczjące polaryzacje zasilania. 
+Producent: ATMEL
+
+Typ ukadu scalonego: mikrokontroler AVR
+
+Organizacja pamici Flash: 32kx8bit
+
+Pojemno pamici EEPROM: 1024B
+
+Pojemno pamici SRAM: 2048B
+
+Czstotliwo taktowania: 20MHz
+
+Liczba wej/wyj:	23 
+
+Liczba kanaw PWM: 6 
+
+Liczba timerw 8-bit: 2 
+
+Liczba timerw 16-bit: 1 
+
+Napicie pracy: 1.8...5.5V
+
+
+![img](zdjęcia/Porty.png)
+
+
+### 2. Rezonator kwarcowy 
+
+
+
+
+## Elementy wejścia
+
+
+
+### 3.  Termistor
+Termistory NTC ze względny na “ładny”, gładki przebieg charakterystyki rezystancji w funkcji temperatury, są często stosowane w roli elementów pomiarowych. Układ elektroniczny mierzy rezystancję i na podstawie odpowiednich tabel lub wzorów przelicza uzyskaną wartość na temperaturę. Ich rezystancja może zmieniać się w naprawdę szerokim zakresie.
+![img](zdjęcia/Termistor.png)
+
+## Elementy wyjścia
+
+
+### 4.  Dioda LED RGB
+![img](zdjęcia/LED.png)
+
+# Kod
