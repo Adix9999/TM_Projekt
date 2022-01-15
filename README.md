@@ -11,7 +11,7 @@ W zależności od napięcia na termistorze zmieniana jest jasność świecenia d
 - **Wejścia:** Termistor
 
 # Lista elementów projektu:
-
+***
 ## Mikrokontroler
 ![img](zdjęcia/Mikrokontroler.PNG)
 
@@ -49,7 +49,7 @@ Napicie pracy: 1.8...5.5V
 
 
 
-
+***
 ## Elementy wejścia
 
 
@@ -58,6 +58,8 @@ Napicie pracy: 1.8...5.5V
 Termistory NTC ze względny na “ładny”, gładki przebieg charakterystyki rezystancji w funkcji temperatury, są często stosowane w roli elementów pomiarowych. Układ elektroniczny mierzy rezystancję i na podstawie odpowiednich tabel lub wzorów przelicza uzyskaną wartość na temperaturę. Ich rezystancja może zmieniać się w naprawdę szerokim zakresie.
 ![img](zdjęcia/Termistor.PNG)
 
+***
+
 ## Elementy wyjścia
 
 
@@ -65,3 +67,44 @@ Termistory NTC ze względny na “ładny”, gładki przebieg charakterystyki re
 ![img](zdjęcia/LED.PNG)
 
 # Kod
+```cpp
+#include "main.h"
+#include <avr/io.h>
+#include <util/delay.h> //dodanie bilbioteki związanej z opóźnieniem
+
+int main(void)
+{
+
+	DDRB |= (1 << PORTB1); //ustawianie portów wejścia/wyjścia
+
+	TCCR1A |= (1 << COM1A1) | (1 << WGM10); 
+	TCCR1B |= (1 << WGM12) | (1 << CS11); 
+	//ustawianie trybu timera oraz ustawianie prescalera
+	
+	OCR1A = 0; //ustawienie wartości porównawczej
+
+
+	ADMUX |= (1 << REFS0); //ustawianie rejestru multipleksera ADC
+	ADCSRA |= (1 << ADPS1) | (1 << ADPS0); //ustawianie preskalera ADC
+	ADCSRA |= (1 << ADEN); //włączanie ADC
+
+
+	int termistor;
+	int PWM = 0;
+
+	while (1)
+	{
+		ADCSRA |= (1 << ADSC); //uruchamianie pomiaru
+		loop_until_bit_is_clear(ADCSRA, ADSC); //wykonywanie pętli aż do zmiany rejestru ADSC na 0
+		termistor = ADC;
+
+		if ((termistor % 4) == 0)
+		{
+			PWM = termistor / 4;
+		}
+
+		OCR1A = PWM;
+		_delay_ms(50);
+	}
+}
+```
