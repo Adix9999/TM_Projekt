@@ -1,6 +1,6 @@
 # Projekt - Zmiana natężenia światła emitowanego przez diodę w zależności od temperatury otoczenia. 
 # Opis projektu:
-W zależności od napięcia na termistorze zmieniana jest jasność świecenia diody LED. Czym wyższa temperatura, tym jaśniej świecić będzie dioda. 
+Założeniem projektu jest sprawdzanie temperatury otoczenia. Możliwe jest sprawdzanie w szerokim zakresie temperatur. 
 
 
 
@@ -45,7 +45,9 @@ Napicie pracy: 1.8...5.5V
 ![img](zdjęcia/Porty.png)
 
 
-### 2. Rezonator kwarcowy 
+### 2. Rezonator kwarcowy 16MHz
+
+![img](zdjęcia/Rezonator.gif)
 
 
 
@@ -55,8 +57,21 @@ Napicie pracy: 1.8...5.5V
 
 
 ### 3.  Termistor
-Termistory NTC ze względny na “ładny”, gładki przebieg charakterystyki rezystancji w funkcji temperatury, są często stosowane w roli elementów pomiarowych. Układ elektroniczny mierzy rezystancję i na podstawie odpowiednich tabel lub wzorów przelicza uzyskaną wartość na temperaturę. Ich rezystancja może zmieniać się w naprawdę szerokim zakresie.
+Termistory NTC ze względu gładki przebieg charakterystyki rezystancji w funkcji temperatury, są często stosowane w roli elementów pomiarowych. Układ elektroniczny mierzy rezystancję i na podstawie odpowiednich tabel lub wzorów przelicza uzyskaną wartość na temperaturę. Ich rezystancja może zmieniać się w naprawdę szerokim zakresie.
+
 ![img](zdjęcia/Termistor.PNG)
+
+Termistor NTC 110 10kΩ 5%, 
+
+Typ: NTC
+
+Rezystancja: 10 kΩ dla 25°C
+
+Tolerancja: 5 %
+
+Zakres temperatur: -25...+100°C
+
+![img](zdjęcia/Termistor_Zdj.png)
 
 ***
 
