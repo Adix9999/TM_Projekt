@@ -1,6 +1,6 @@
 # Projekt - Zmiana natężenia światła emitowanego przez diodę w zależności od temperatury otoczenia. 
 # Opis projektu:
-Założeniem projektu jest sprawdzanie temperatury otoczenia. Możliwe jest sprawdzanie w szerokim zakresie temperatur. 
+Założeniem projektu jest sprawdzanie temperatury otoczenia. Możliwe jest sprawdzanie w szerokim zakresie temperatur. Jasność diody będzie zależała od napięcia na termistorze.
 
 
 
@@ -71,7 +71,7 @@ Tolerancja: 5 %
 
 Zakres temperatur: -25...+100°C
 
-![img](zdjęcia/Termistor_Zdj.png)
+![img](zdjęcia/Termistor_Zdj.jpg)
 
 ***
 
